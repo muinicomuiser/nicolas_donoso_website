@@ -1,0 +1,99 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets"
+import fotoYo from "@/assets/images/yo.jpg"
+
+
+---
+
+ <Layout>
+        <div class="bio-wrapper">
+            <Image src={fotoYo} loading="eager"  alt="Foto de Nicolás" class="bio-image" />
+            <div class="bio-content">
+                <h2>nicolás donoso</h2>
+                <p class="bio-text subtitles">
+                    Artista visual licenciado en Artes Plásticas por la Universidad de Chile, 
+                    especializado en pintura y dibujo, y con estudios de piano y teoría musical. <br>
+                    <br>
+                    Su trabajo artístico dialoga con los conceptos de ecosistema, naturaleza y comunidad. 
+                    Usa dibujos de trazos copiosos y serenos para mostrar una humanidad en su forma más elemental, 
+                    que convive y compone sus ritos junto a la naturaleza; una sensación de humanidad latente que busca la vida comunitaria, 
+                    que se relaciona con el mundo caminando, observando, agrupándose, buscando y creando refugios y lugares santos.<br>
+                    <br>
+                    El paisaje aparece en su obra como el espacio vasto y frágil en que se da lo humano, encarnando a los lugares 
+                    que constituyen una identidad común y que están actualmente en crisis.
+                </p>
+            </div>
+        </div>
+ </Layout>
+
+ <style>
+	main {
+		flex-grow: 1; 
+	}    
+    .bio-wrapper {
+        max-width: 1920;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        /* gap: 36; */
+        justify-content: space-evenly;
+        /* width: 100vw; */
+        height: auto;
+
+        /* gap: 32px; */
+    }
+    .bio-content {
+        display: flex;
+        flex-flow: column;
+        width: 50%;
+        height: 100%;
+        justify-content: space-between;
+    }
+    h2 {
+        height: auto;
+		font-family: "Oregano", cursive;
+        height: auto;
+        font-size: 96;
+		font-weight: 400;
+		/* line-height: 1.2; */
+		letter-spacing: 20;
+		text-align: left;
+    }
+
+    .bio-text {
+        text-align: justify;
+        align-content: center;
+        /* font-family: "Oregano", cursive;
+		font-size: 96;
+		font-weight: 400;
+		line-height: 1.2;
+		letter-spacing: 20;
+		text-align: left; */
+    }
+
+    .bio-image {
+        height: 720px;
+        width: auto;
+    }
+ </style>
+<!-- 
+ 	nav {
+		height: 100%;
+		padding: 0 10%;
+		border-bottom: 2px dotted var(--font-color);
+		display: flex;
+		align-items: center;
+	}
+	.nav-list {
+		display: flex;
+		flex-flow: row;
+		align-items: center;
+		/* justify-content: space-around; */
+		list-style-type: none;
+		gap: 32px;
+	}
+	.nav-link {
+		text-align: center;
+		text-decoration: none;
+	} -->

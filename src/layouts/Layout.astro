@@ -1,7 +1,11 @@
 ---
 import "@/styles/global.css"
+import { Image } from "astro:assets"
+import dibujoLogo from "@/assets/images/pecesita.png"
 // const base_path = ''
 const base_path = '/nicolas_donoso_website'
+
+
 ---
 
 <html lang="en">
@@ -19,12 +23,13 @@ const base_path = '/nicolas_donoso_website'
 	</head>
 	<body>
 		<header>
+			<a class="logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Pez" /></a>
 			<nav>
 				<ul class="nav-list">
-					<li><a class="nav-link subtitles" href=`${base_path}/blog`>blog</a></li>
-					<li><a class="nav-link subtitles" href=`${base_path}/catalogo`>catálogo</a></li>
+					<li><a class="nav-link subtitles" href=`${base_path}/`>blog</a></li>
+					<li><a class="nav-link subtitles" href=`${base_path}/`>catálogo</a></li>
 					<li><a class="nav-link subtitles" href=`${base_path}/bio`>bio</a></li>
-					<li><a class="nav-link subtitles" href=`${base_path}/contacto`>contacto</a></li>
+					<li><a class="nav-link subtitles" href=`${base_path}/`>contacto</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -47,7 +52,6 @@ const base_path = '/nicolas_donoso_website'
 	main {
 		flex-grow: 1;
   		display: grid;
-		gap: 32;
   		place-content: center;
 	}	
 	header {
@@ -57,7 +61,20 @@ const base_path = '/nicolas_donoso_website'
 		justify-content: space-around;
 		position: sticky;
 	}
+
+	.logo-link {
+		height: 50px;
+		width: auto;
+		position: absolute;
+		left: 0;
+	}
+	.logo-image {
+		height: 50px;
+		width: auto;
+		margin: 0 2vw;
+	}
 	nav {
+		position: relative;
 		height: 100%;
 		padding: 0 10%;
 		border-bottom: 2px dotted var(--font-color);
@@ -70,7 +87,7 @@ const base_path = '/nicolas_donoso_website'
 		align-items: center;
 		/* justify-content: space-around; */
 		list-style-type: none;
-		gap: 32px;
+		gap: 5vw;
 	}
 	.nav-link {
 		text-align: center;
@@ -86,6 +103,9 @@ const base_path = '/nicolas_donoso_website'
 	font-family: "Source Sans 3", sans-serif;
 		color: var(--font-color)
 	}
+	*, *::before, *::after {
+	box-sizing: border-box;
+	}	
 	.subtitles {
 		font-size: var(--subtitles-font-size);
 		font-weight: var(--subtitles-font-weight);

@@ -6,27 +6,21 @@ import dibujoPortada from "@/assets/images/a.png"
 
 ---
  <Layout>
+	<div class="home-wrapper">
 		<div class="logo">nicolás donoso</div>
 		<!-- <img src="public/imagenes/a.png" loading="eager"  alt="El dibujo de un árbol" class="home-image"> -->
 		<Image src={dibujoPortada} loading="eager"  alt="El dibujo de un árbol" class="home-image" />
+
+	</div>
  </Layout>
 <style>
-	main {
+	.home-wrapper {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		align-self: center;
 		justify-self: center;
-		flex-grow: 1; 
 	}
-	/* .main-home {
-		margin: auto;
-		display: grid;
-		justify-content: center;
-		align-items: center;
-		position: absolute;
-		width: 100vw;
-	} */
 	.home-image {
 		width: 100%;
 		max-width: 1080;
