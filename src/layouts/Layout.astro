@@ -1,0 +1,99 @@
+---
+import "@/styles/global.css"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oregano:ital@0;1&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">		
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Web Nicolás Donoso</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul class="nav-list">
+					<li><a class="nav-link subtitles" href="/blog">blog</a></li>
+					<li><a class="nav-link subtitles" href="/catalogo">catálogo</a></li>
+					<li><a class="nav-link subtitles" href="/bio">bio</a></li>
+					<li><a class="nav-link subtitles" href="/contacto">contacto</a></li>
+				</ul>
+			</nav>
+		</header>
+        <main>
+            <slot />
+        </main>
+	</body>
+</html>
+
+<style>
+	body {
+		background-color: var(--primary-bg-color);
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}  
+	header, footer {
+		flex-shrink: 0; 
+	}
+	main {
+		flex-grow: 1;
+  		display: grid;
+		gap: 32;
+  		place-content: center;
+	}	
+	header {
+		height: 70px;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		position: sticky;
+	}
+	nav {
+		height: 100%;
+		padding: 0 10%;
+		border-bottom: 2px dotted var(--font-color);
+		display: flex;
+		align-items: center;
+	}
+	.nav-list {
+		display: flex;
+		flex-flow: row;
+		align-items: center;
+		/* justify-content: space-around; */
+		list-style-type: none;
+		gap: 32px;
+	}
+	.nav-link {
+		text-align: center;
+		text-decoration: none;
+	}
+
+
+</style>
+<style is:global>
+	* {
+	margin: 0;
+	padding: 0;
+	font-family: "Source Sans 3", sans-serif;
+		color: var(--font-color)
+	}
+	.subtitles {
+		font-size: var(--subtitles-font-size);
+		font-weight: var(--subtitles-font-weight);
+		line-height: var(--subtitles-line-height);
+		letter-spacing: var(--subtitles-letter-spacing);
+	}
+	.content {
+		font-size: var(--content-font-size);
+		font-weight: var(--content-font-weight);
+		line-height: var(--content-line-height);
+		letter-spacing: var(--content-letter-spacing);
+	}
+</style>

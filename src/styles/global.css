@@ -1,0 +1,17 @@
+:root {
+  --primary-bg-color:  #f9f9f9;
+  --font-color: #484645;
+  --head-font-size: 48px;
+  --head-letter-spacing: 2;
+  --head-font-weight: 600;
+  --head-line-height: 1;
+  --subtitles-font-size: 32px;
+  --subtitles-letter-spacing: 0;
+  --subtitles-font-weight: 400;
+  --subtitles-line-height: 1;
+  --content-letter-spacing: 0;
+  --content-line-height: 1.2;
+  --content-font-weight: 400;
+  --content-font-size: 18px;
+}
+

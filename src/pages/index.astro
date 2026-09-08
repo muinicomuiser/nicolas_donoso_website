@@ -1,17 +1,44 @@
 ---
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets"
+import dibujoPortada from "@/assets/images/a.png"
+
 
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+ <Layout>
+		<div class="logo">nicolás donoso</div>
+		<!-- <img src="public/imagenes/a.png" loading="eager"  alt="El dibujo de un árbol" class="home-image"> -->
+		<Image src={dibujoPortada} loading="eager"  alt="El dibujo de un árbol" class="home-image" />
+ </Layout>
+<style>
+	main {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		align-self: center;
+		justify-self: center;
+		flex-grow: 1; 
+	}
+	/* .main-home {
+		margin: auto;
+		display: grid;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: 100vw;
+	} */
+	.home-image {
+		width: 100%;
+		max-width: 1080;
+		height: auto;
+		object-fit: cover;
+	}	 
+	.logo {
+		font-family: "Oregano", cursive;
+		font-size: 128;
+		font-weight: 400;
+		line-height: 1.2;
+		letter-spacing: 20;
+		text-align: center;
+	}
+</style>
