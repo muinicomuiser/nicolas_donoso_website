@@ -34,7 +34,7 @@ import fotoYo from "@/assets/images/yo7.png"
     .bio-wrapper {
 		display: flex;
 		align-items: center;
-		flex-direction: column;
+        justify-content: space-evenly;
 		align-self: center;
 		justify-self: center;        
     }
@@ -74,6 +74,13 @@ import fotoYo from "@/assets/images/yo7.png"
 	/* Adaptación a Teléfono */
 	@media (max-width: 480px) {
         .bio-wrapper {
+            display: flex;
+            align-items: center;
+            /* flex-direction: row; */
+            /* flex-direction: column; */
+            align-self: center;
+            justify-self: center;                 
+
             padding: 2rem 0;
             gap: 2rem;
             flex-direction: column;
