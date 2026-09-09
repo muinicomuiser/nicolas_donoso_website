@@ -2,14 +2,26 @@
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets"
 import dibujoPortada from "@/assets/images/a2.png"
+import portadaMobile from "@/assets/images/e.png"
+import Picture from "astro/components/Picture.astro";
 
 
 ---
  <Layout>
 	<div class="home-wrapper">
-		<div class="logo">nicolás donoso</div>
+		<div class="logo-nombre">nicolás donoso</div>
 		<!-- <img src="public/imagenes/a.png" loading="eager"  alt="El dibujo de un árbol" class="home-image"> -->
-		<Image src={dibujoPortada} loading="eager"  alt="El dibujo de un árbol" class="home-image" />
+		<!-- <Image src={dibujoPortada} loading="eager"  alt="El dibujo de un árbol" class="home-image" /> -->
+		<picture class="home-image">
+			<!-- Imagen para pantallas Desktop (mínimo 768px) -->
+			<source media="(min-width: 480px)" srcset={dibujoPortada.src} />
+			<!-- Imagen por defecto / Mobile -->
+			<img 
+				src={portadaMobile.src} 
+				alt="Descripción de la imagen" 
+				class="home-image"
+			/>
+		</picture>		 
 
 	</div>
  </Layout>
@@ -23,16 +35,31 @@ import dibujoPortada from "@/assets/images/a2.png"
 	}
 	.home-image {
 		width: 100%;
-		max-width: 1080;
+		/* max-width: 1080; */
 		height: auto;
 		object-fit: cover;
 	}	 
-	.logo {
+	.logo-nombre {
 		font-family: "Oregano", cursive;
 		font-size: 128;
 		font-weight: 400;
 		line-height: 1.2;
 		letter-spacing: 20;
 		text-align: center;
+	}
+	/* Adaptación a Teléfono */
+	@media (max-width: 480px) {
+		.home-wrapper {
+			/* gap: 2rem; */
+		}		
+		.logo-nombre {
+			font-size: 72;
+			letter-spacing: 10;
+		}
+		.home-image {
+			/* max-width: 1080; */
+			max-height: 50vh;
+			width: auto;
+		}		
 	}
 </style>
