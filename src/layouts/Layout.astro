@@ -1,7 +1,7 @@
 ---
 import "@/styles/global.css"
 import { Image } from "astro:assets"
-import dibujoLogo from "@/assets/images/pecesita.png"
+import dibujoLogo from "@/assets/images/hojas.png"
 // const base_path = ''
 const base_path = '/nicolas_donoso_website'
 
@@ -23,19 +23,28 @@ const base_path = '/nicolas_donoso_website'
 	</head>
 	<body>
 		<header>
-			<a class="logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Pez" /></a>
 			<nav>
+				<a class="logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Pez" /></a>
 				<ul class="nav-list">
-					<li><a class="nav-link subtitles" href=`${base_path}/`>blog</a></li>
-					<li><a class="nav-link subtitles" href=`${base_path}/`>catálogo</a></li>
+					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>blog</a></li> -->
+					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>catálogo</a></li> -->
 					<li><a class="nav-link subtitles" href=`${base_path}/bio`>bio</a></li>
-					<li><a class="nav-link subtitles" href=`${base_path}/`>contacto</a></li>
+					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>contacto</a></li> -->
 				</ul>
 			</nav>
 		</header>
         <main>
             <slot />
         </main>
+		<footer>
+			<div class="footer-wrapper">
+				<ul class="footer-list">
+					<li><a href="https://www.instagram.com/niconicodonoso/" target="_blank" class="footer-link subtitles">@niconicodonoso</a></li>
+					<li><a href="https://www.instagram.com/nicosodonoso/" target="_blank" class="footer-link subtitles">@nicosodonoso</a></li>
+					<li><a href="https://github.com/muinicomuiser/" target="_blank" class="footer-link subtitles">github</a></li>
+				</ul>
+			</div>
+		</footer>
 	</body>
 </html>
 
@@ -94,18 +103,46 @@ const base_path = '/nicolas_donoso_website'
 		text-decoration: none;
 	}
 
+	.footer-wrapper {
+		height: 70px;
+		display: flex;
+		align-content: center;
+		justify-content: space-around;
+	}
+	.footer-list {
+		border-top: 2px dotted var(--font-color);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+		list-style-type: none;
+		gap: 5vw;
+	}
+	.footer-link {
+		text-decoration: none;
+		text-align: center;
+	}
+
 
 </style>
 <style is:global>
+	*, *::before, *::after {
+	box-sizing: border-box;
+	}	
 	* {
 	margin: 0;
 	padding: 0;
 	font-family: "Source Sans 3", sans-serif;
 		color: var(--font-color)
 	}
-	*, *::before, *::after {
-	box-sizing: border-box;
-	}	
+
+	.title {
+		font-size: var(--head-font-size);
+		font-weight: var(--head-font-weight);
+		line-height: var(--head-line-height);
+		letter-spacing: var(--head-letter-spacing);
+	}
+
 	.subtitles {
 		font-size: var(--subtitles-font-size);
 		font-weight: var(--subtitles-font-weight);
