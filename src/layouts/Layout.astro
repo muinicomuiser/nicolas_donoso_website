@@ -17,14 +17,14 @@ const base_path = '/nicolas_donoso_website'
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oregano:ital@0;1&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">		
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Web Nicolás Donoso</title>
 	</head>
 	<body>
 		<header>
+			<a class="logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Logo" /></a>
 			<nav>
-				<a class="logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Pez" /></a>
 				<ul class="nav-list">
 					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>blog</a></li> -->
 					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>catálogo</a></li> -->
@@ -39,9 +39,9 @@ const base_path = '/nicolas_donoso_website'
 		<footer>
 			<div class="footer-wrapper">
 				<ul class="footer-list">
-					<li><a href="https://www.instagram.com/niconicodonoso/" target="_blank" class="footer-link subtitles">@niconicodonoso</a></li>
-					<li><a href="https://www.instagram.com/nicosodonoso/" target="_blank" class="footer-link subtitles">@nicosodonoso</a></li>
-					<li><a href="https://github.com/muinicomuiser/" target="_blank" class="footer-link subtitles">github</a></li>
+					<li><a href="https://www.instagram.com/niconicodonoso/" target="_blank" class="footer-link content">@niconicodonoso</a></li>
+					<li><a href="https://www.instagram.com/nicosodonoso/" target="_blank" class="footer-link content">@nicosodonoso</a></li>
+					<li><a href="https://github.com/muinicomuiser/" target="_blank" class="footer-link content">github</a></li>
 				</ul>
 			</div>
 		</footer>
@@ -51,44 +51,50 @@ const base_path = '/nicolas_donoso_website'
 <style>
 	body {
 		background-color: var(--primary-bg-color);
-		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
+		min-height: 100vh;
+		align-content: center;
 	}  
 	header, footer {
 		flex-shrink: 0; 
 	}
 	main {
-		flex-grow: 1;
+		/* flex-grow: 1; */
+		flex: 1;
   		display: grid;
-  		place-content: center;
+  		/* place-content: center; */
 	}	
 	header {
-		height: 70px;
+		height: 4rem;
+		position: relative;
 		display: flex;
-		align-items: center;
+		/* align-content: center; */
 		justify-content: space-around;
-		position: sticky;
 	}
 
 	.logo-link {
-		height: 50px;
+		/* height: 50px; */
+		margin-left: 1rem;
+		padding: 1rem;
+		/* align-self: flex-start; */
 		width: auto;
 		position: absolute;
 		left: 0;
 	}
 	.logo-image {
-		height: 50px;
+		/* height: 50px; */
+		height: 4rem;
 		width: auto;
-		margin: 0 2vw;
+		/* margin: 0 2vw; */
 	}
 	nav {
 		position: relative;
-		height: 100%;
+		/* height: 100%; */
 		padding: 0 10%;
 		border-bottom: 2px dotted var(--font-color);
 		display: flex;
-		align-items: center;
+		/* align-items: center; */
 	}
 	.nav-list {
 		display: flex;
@@ -102,25 +108,48 @@ const base_path = '/nicolas_donoso_website'
 		text-align: center;
 		text-decoration: none;
 	}
-
+	
+	footer {
+		flex-shrink: 0;
+	}
 	.footer-wrapper {
-		height: 70px;
+		height: 3rem;
 		display: flex;
 		align-content: center;
 		justify-content: space-around;
 	}
 	.footer-list {
 		border-top: 2px dotted var(--font-color);
+		padding: 0 10%;
 		display: flex;
-		flex-direction: row;
+		align-content: center;
+		justify-content: space-evenly;
 		align-items: center;
-		justify-content: space-around;
 		list-style-type: none;
-		gap: 5vw;
+		gap: 1vw;
 	}
 	.footer-link {
 		text-decoration: none;
 		text-align: center;
+	}
+
+	/* Adaptación a Teléfono */
+	@media (max-width: 480px) {
+		.logo-image {
+			/* height: 50px; */
+			height: 4rem;
+			width: auto;
+			/* margin: 0 2vw; */
+		}		
+		.footer-wrapper {
+			height: 5rem;
+			display: flex;
+			align-content: center;
+		}		
+		.footer-list {
+			justify-content: space-around;
+			flex-direction: column;
+		}		
 	}
 
 
@@ -130,9 +159,9 @@ const base_path = '/nicolas_donoso_website'
 	box-sizing: border-box;
 	}	
 	* {
-	margin: 0;
-	padding: 0;
-	font-family: "Source Sans 3", sans-serif;
+		margin: 0;
+		padding: 0;
+		font-family: "Source Sans 3", sans-serif;
 		color: var(--font-color)
 	}
 
