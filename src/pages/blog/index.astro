@@ -1,14 +1,15 @@
 ---
 import BlogPostCard from "@/components/BlogPostCard.astro";
-import { CONSTANTS } from "@/constants/constants";
+import dibujoBlog from "@/assets/images/A13.jpg"
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
-const base_path = CONSTANTS.BASE_PATH
 const posts = await getCollection("posts")
 ---
 <Layout>
     <div class="blog-wrapper">
-        <img src="src/assets/images/A13.jpg" alt="Fondo" class="imagen-fondo">
+        <!-- <Image src={dibujoBlog} loading="eager" class="logo-image" alt="Logo" /> -->
+        <img src={dibujoBlog.src} alt="Fondo" class="imagen-fondo">
+        <!-- <img src="src/assets/images/A13.jpg" alt="Fondo" class="imagen-fondo"> -->
         <div class="blog-content">
             <h2 class="blog-title title">Blog</h2>
             <div class="blog-list">
