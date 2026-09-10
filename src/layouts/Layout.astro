@@ -20,16 +20,17 @@ const base_path = CONSTANTS.BASE_PATH
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oregano:ital@0;1&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Web Nicolás Donoso</title>
+		<title>Nicolás Donoso</title>
 	</head>
 	<body>
 		<header>
 			<nav>
 				<ul class="nav-list">
-					<li><a class="logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Logo" /></a></li>
+					<li><a class="nav-link logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Logo" /></a></li>
 					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>catálogo</a></li> -->
 					<li><a class="nav-link subtitles" href=`${base_path}/bio`>bio</a></li>
 					<li><a class="nav-link subtitles" href=`${base_path}/blog`>blog</a></li>
+					<li><a class="nav-link subtitles" href=`https://sites.google.com/view/catalogo-nicolas-donoso/catalog` target="_blank" >catálogo<sub>↪</sub></a></li>
 					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>contacto</a></li> -->
 				</ul>
 			</nav>
@@ -99,11 +100,17 @@ const base_path = CONSTANTS.BASE_PATH
 		flex-flow: row;
 		align-items: center;
 		list-style-type: none;
-		gap: 5rem;
+		gap: 3rem;
 	}
+	sub {
+		font-size: 1rem;
+		align-self: flex-end;
+	}	
 	.nav-link {
+		display: flex;
 		text-align: center;
 		text-decoration: none;
+		justify-self: center;
 	}
 	
 	footer {
@@ -132,8 +139,20 @@ const base_path = CONSTANTS.BASE_PATH
 
 	/* Adaptación a Teléfono */
 	@media (max-width: 480px) {
+		header {
+			/* align-items: center; */
+			height: 6rem;
+			justify-content: center;
+			/* align-items: end; */
+
+		}
 		.nav-list {
-			gap: 3rem;
+			display: grid;
+			grid-template-columns: 2fr 2fr; 
+			gap: 0;
+			align-self: center;
+			/* flex-direction: column; */
+			/* column-gap: 1rem; */
 		}		
 		.footer-wrapper {
 			height: 5rem;
