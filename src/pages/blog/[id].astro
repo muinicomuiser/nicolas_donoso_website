@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import  BaseLayout from '@/layouts/Layout.astro';
+import { render } from 'astro:content';
+
+export async function getStaticPaths(){
+    const posts = await getCollection('posts')
+    return posts.map((post) => {
+        return {
+            params: {id: post.id },
+            props: { post }
+        }
+    })
+}
+
+const {post} = Astro.props
+const {Content} = await render(post) // Para tomar el contenido adicional desde los archivos markdown
+---
+
+<BaseLayout>
+    <div class="post-wrapper">
+        <div class="post-content">
+            <h2 class="post-title title">{post.data.title}</h2>
+            <p class="post-subtitles subtitles">{post.data.subtitle}</p>
+            <article class="markdown-content">
+                <Content />
+            </article>
+            <!-- Así le decimos al componente que renderice el Content del elemento -->
+    
+            <!-- Carga el js en el navegador solo cuando el usuario ve el componente -->
+    
+            <!-- Carga el js en el navegador -->
+            <!-- <Likes client:load/> -->
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+
+    .post-title {
+        text-align: left;
+    }
+    .post-wrapper {
+        max-width: 60%;
+        justify-items: center;
+        margin: 0 auto;
+    }
+    .post-content {
+        display: grid;
+        margin: 0 auto;
+        padding: 5%;
+        text-align: left;
+        gap: 1rem;
+    }
+	@media (max-width: 480px) {
+    .post-wrapper {
+        max-width: 100%;
+    }
+	}    
+</style>
+<style is:global>
+    .markdown-content h2 {
+        padding: 1rem 0;
+        font-size: var(--subtitles-font-size);
+        line-height: var(--subtitles-line-height);
+        font-weight: var(--subtitles-font-weight);
+        letter-spacing: var(--subtitles-letter-spacing);
+    }
+    .markdown-content p {
+        font-size: var(--content-font-size);
+        line-height: var(--content-line-height);
+        font-weight: var(--content-font-weight);
+        letter-spacing: var(--content-letter-spacing);
+    }
+    .markdown-content img {
+        max-width: 100%;
+        height: auto;
+    }
+
+</style>

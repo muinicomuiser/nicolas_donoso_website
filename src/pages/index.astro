@@ -1,9 +1,7 @@
 ---
+import dibujoPortada from "@/assets/images/a2.png";
+import portadaMobile from "@/assets/images/e.png";
 import Layout from "@/layouts/Layout.astro";
-import { Image } from "astro:assets"
-import dibujoPortada from "@/assets/images/a2.png"
-import portadaMobile from "@/assets/images/e.png"
-import Picture from "astro/components/Picture.astro";
 
 
 ---
@@ -41,7 +39,7 @@ import Picture from "astro/components/Picture.astro";
 	}	 
 	.logo-nombre {
 		font-family: "Oregano", cursive;
-		font-size: 128;
+		font-size: 6.6rem;
 		font-weight: 400;
 		line-height: 1.2;
 		letter-spacing: 20;
@@ -53,6 +51,7 @@ import Picture from "astro/components/Picture.astro";
 			gap: 2rem;
 		}		
 		.logo-nombre {
+			padding: 0 10%;
 			font-size: 4rem;
 			letter-spacing: 10;
 			line-height: 3rem;
@@ -60,6 +59,7 @@ import Picture from "astro/components/Picture.astro";
 		.home-image {
 			/* max-width: 1080; */
 			max-height: 50dvh;
+			min-width: 10rem;
 			width: auto;
 		}		
 	}
