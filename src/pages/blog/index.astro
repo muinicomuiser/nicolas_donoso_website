@@ -1,0 +1,69 @@
+---
+import BlogPostCard from "@/components/BlogPostCard.astro";
+import { CONSTANTS } from "@/constants/constants";
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+const base_path = CONSTANTS.BASE_PATH
+const posts = await getCollection("posts")
+---
+<Layout>
+    <div class="blog-wrapper">
+        <img src="src/assets/images/A13.jpg" alt="Fondo" class="imagen-fondo">
+        <div class="blog-content">
+            <h2 class="blog-title title">Blog</h2>
+            <div class="blog-list">
+                <div class="post-content">
+                    {posts.map( (post) => <BlogPostCard post={post} /> )}
+                    {posts.length === 0 && (
+                        <p>Trabajando en blogs</p>
+                    )}
+                </div>            
+
+        </div>
+        </div>
+    </div>
+</Layout>
+<style>
+    .blog-wrapper {
+        display: grid;
+        align-content: center;
+        width: 100%;
+        
+        max-width: 80%;
+        margin-left: auto;  /* Centra el contenedor horizontalmente */
+        margin-right: auto;        
+    }
+    .imagen-fondo {
+        /* position: fixed; */
+        /* justify-self: start; */
+        width: 80%;
+        height: auto; /* Permite que la altura se calcule sola según la imagen */
+        display: block;
+        margin-left: auto;  /* Centra el contenedor horizontalmente */
+        margin-right: auto; 
+        /* 3. Aplica el efecto multiply entre la imagen y el fondo del main */
+        mix-blend-mode: multiply; 
+        /* opacity: 20%; */
+    }    
+    .blog-content {
+        /* 4. Asegura que el texto sea visible y quede por encima de la imagen */
+        display: grid;
+        position: relative; 
+        z-index: 2;
+        padding: 2rem;
+    }    
+    .imagen-fondo,
+    .blog-content {
+        grid-area: 1 / 1; 
+    }
+    .blog-title {
+        padding: 4rem 0;
+        text-align: center;
+    }
+    .blog-list {
+        padding: 2rem 0;
+    }
+    
+
+
+</style>

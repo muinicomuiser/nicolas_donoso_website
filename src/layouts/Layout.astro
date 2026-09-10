@@ -2,8 +2,9 @@
 import "@/styles/global.css"
 import { Image } from "astro:assets"
 import dibujoLogo from "@/assets/images/hojas.png"
-// const base_path = ''
-const base_path = '/nicolas_donoso_website'
+import { CONSTANTS } from "@/constants/constants"
+const base_path = CONSTANTS.BASE_PATH
+// const base_path = '/nicolas_donoso_website'
 
 
 ---
@@ -23,12 +24,12 @@ const base_path = '/nicolas_donoso_website'
 	</head>
 	<body>
 		<header>
-			<a class="logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Logo" /></a>
 			<nav>
 				<ul class="nav-list">
-					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>blog</a></li> -->
+					<li><a class="logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Logo" /></a></li>
 					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>catálogo</a></li> -->
 					<li><a class="nav-link subtitles" href=`${base_path}/bio`>bio</a></li>
+					<li><a class="nav-link subtitles" href=`${base_path}/blog`>blog</a></li>
 					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>contacto</a></li> -->
 				</ul>
 			</nav>
@@ -67,42 +68,38 @@ const base_path = '/nicolas_donoso_website'
 	}	
 	header {
 		height: 4rem;
-		position: relative;
+		/* position: relative; */
 		display: flex;
-		/* align-content: center; */
-		justify-content: space-around;
+		justify-content: center;
 	}
 
-	.logo-link {
-		/* height: 50px; */
+	/* .logo-link {
 		margin-left: 1rem;
 		padding: 1rem;
-		/* align-self: flex-start; */
 		width: auto;
 		position: absolute;
 		left: 0;
-	}
+	} */
 	.logo-image {
 		/* height: 50px; */
-		height: 4rem;
+		position: relative;
+		height: 3rem;
 		width: auto;
 		/* margin: 0 2vw; */
 	}
 	nav {
 		position: relative;
-		/* height: 100%; */
-		padding: 0 10%;
+		padding: 0 5%;
 		border-bottom: 2px dotted var(--font-color);
 		display: flex;
-		/* align-items: center; */
+		align-items: center;
 	}
 	.nav-list {
 		display: flex;
 		flex-flow: row;
 		align-items: center;
-		/* justify-content: space-around; */
 		list-style-type: none;
-		gap: 5vw;
+		gap: 5rem;
 	}
 	.nav-link {
 		text-align: center;
@@ -135,6 +132,9 @@ const base_path = '/nicolas_donoso_website'
 
 	/* Adaptación a Teléfono */
 	@media (max-width: 480px) {
+		.nav-list {
+			gap: 3rem;
+		}		
 		.footer-wrapper {
 			height: 5rem;
 			display: flex;
