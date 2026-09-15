@@ -29,6 +29,6 @@ vemos todos todos lo mismo al mismo tiempo
 
 saber recorrer no implica saber trazar      
 qué tanto se desconoce lo que se ve     
-por qué cada forma fuente sonido luminosidad y por qué se homogeniza
+por qué cada forma fuente sonido luminosidad y por qué se homogeneiza
 ##
 qué forma tendría mi espacio
