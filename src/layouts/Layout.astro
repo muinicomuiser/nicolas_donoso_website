@@ -1,6 +1,6 @@
 ---
 import "@/styles/global.css"
-import { Image } from "astro:assets"
+// import { Image } from "astro:assets"
 import dibujoLogo from "@/assets/images/hojas.png"
 import { CONSTANTS } from "@/constants/constants"
 const base_path = CONSTANTS.BASE_PATH
@@ -26,7 +26,8 @@ const base_path = CONSTANTS.BASE_PATH
 		<header>
 			<nav>
 				<ul class="nav-list">
-					<li><a class="nav-link logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Logo" /></a></li>
+					<!-- <li><a class="nav-link logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Logo" /></a></li> -->
+					<li><a class="nav-link logo-link" href=`${base_path}/`><img src={dibujoLogo.src} alt="Logo" loading="eager" class="logo-image"></a></li>
 					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>catálogo</a></li> -->
 					<li><a class="nav-link subtitles" href=`${base_path}/bio`>bio</a></li>
 					<li><a class="nav-link subtitles" href=`${base_path}/blog`>blog</a></li>

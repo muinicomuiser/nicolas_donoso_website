@@ -1,13 +1,14 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import netlify from '@astrojs/netlify';
+// import netlify from '@astrojs/netlify';
 
-// export default defineConfig({
-//   site: 'https://muinicomuiser.github.io',
-//   base: '/nicolas_donoso_website',
-//   adapter: netlify(),
-// });
 export default defineConfig({
-  adapter: netlify()
+    // adapter: netlify({
+    //     devFeatures: {
+    //         images: false,
+    //         edgeFunctions: false,
+    //         environmentVariables: false
+    //     }
+    // })
 });

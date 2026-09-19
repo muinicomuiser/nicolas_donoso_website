@@ -4,6 +4,7 @@ import dibujoBlog from "@/assets/images/A13.jpg"
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
 const posts = await getCollection("posts")
+const sorted_posts = posts.sort((a, b) => b.data.date > a.data.date ? 1 : -1)
 ---
 <Layout>
     <div class="blog-wrapper">
@@ -14,9 +15,9 @@ const posts = await getCollection("posts")
             <h2 class="blog-title title">Blog</h2>
             <div class="blog-list">
                 <div class="post-content">
-                    {posts.map( (post) => <BlogPostCard post={post} /> )}
-                    {posts.length === 0 && (
-                        <p>Trabajando en blogs</p>
+                    {sorted_posts.map( (post) => <BlogPostCard post={post} /> )}
+                    {sorted_posts.length === 0 && (
+                        <p>Trabajando en el blog</p>
                     )}
                 </div>            
 
