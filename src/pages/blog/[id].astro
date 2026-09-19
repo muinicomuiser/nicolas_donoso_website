@@ -14,7 +14,7 @@ export async function getStaticPaths(){
 }
 
 const {post} = Astro.props
-const {Content} = await render(post) // Para tomar el contenido adicional desde los archivos markdown
+const {Content} = await render(post)
 ---
 
 <BaseLayout>
@@ -25,12 +25,6 @@ const {Content} = await render(post) // Para tomar el contenido adicional desde 
             <article class="markdown-content">
                 <Content />
             </article>
-            <!-- Así le decimos al componente que renderice el Content del elemento -->
-    
-            <!-- Carga el js en el navegador solo cuando el usuario ve el componente -->
-    
-            <!-- Carga el js en el navegador -->
-            <!-- <Likes client:load/> -->
         </div>
     </div>
 </BaseLayout>
@@ -67,6 +61,12 @@ const {Content} = await render(post) // Para tomar el contenido adicional desde 
         letter-spacing: var(--subtitles-letter-spacing);
     }
     .markdown-content p {
+        font-size: var(--content-font-size);
+        line-height: var(--content-line-height);
+        font-weight: var(--content-font-weight);
+        letter-spacing: var(--content-letter-spacing);
+    }
+    .markdown-content li {
         font-size: var(--content-font-size);
         line-height: var(--content-line-height);
         font-weight: var(--content-font-weight);

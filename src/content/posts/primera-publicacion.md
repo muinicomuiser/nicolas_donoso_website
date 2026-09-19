@@ -1,13 +1,15 @@
 ---
 title: "una página personal"
-date: "martes 9 de septiembre del 2026"
-date-time: "09-09-2026"
+datestr: "martes 9 de septiembre del 2026"
+date: "09-09-2026"
 subtitle: "la primera publicación de mi espacio propio en internet"
 ---
 
 
 
-![Árbol --imagen](./b.png)
+
+<!-- ![Árbol --imagen](./b.png) -->
+![Árbol --imagen](./b.png)      
 
 ## un espacio propio en internet
 

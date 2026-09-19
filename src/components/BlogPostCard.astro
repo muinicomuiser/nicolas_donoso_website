@@ -11,7 +11,7 @@ const {post} = Astro.props
 
 <div class="post-card">
     <p class="post-title subtitles">{post.data.title}</p>
-    <p class="post-date content">{post.data.date}</p>
+    <p class="post-date content">{post.data.datestr}</p>
     <p class="post-subtitle content">{post.data.subtitle}</p>
     <a href={`${base_path}/blog/${post.id}`} style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;"></a>
 </div>  
@@ -21,7 +21,7 @@ const {post} = Astro.props
         display: grid;
         width: 100%;       
         box-sizing: border-box;        
-        background-color: var(--primary-bg-color-80);
+        background-color: var(--primary-bg-color-90);
         position: relative;
         grid-template-rows: 1fr 1fr 1fr;
         padding: 2rem 2rem;
