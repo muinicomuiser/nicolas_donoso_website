@@ -1,6 +1,6 @@
 ---
 title: "una página personal"
-datestr: "martes 9 de septiembre del 2026"
+datestr: "miércoles 9 de septiembre del 2026"
 date: "09-09-2026"
 subtitle: "la primera publicación de mi espacio propio en internet"
 ---
