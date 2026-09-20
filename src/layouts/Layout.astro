@@ -1,11 +1,24 @@
 ---
 import "@/styles/global.css"
-// import { Image } from "astro:assets"
 import dibujoLogo from "@/assets/images/hojas.png"
 import { CONSTANTS } from "@/constants/constants"
-const base_path = CONSTANTS.BASE_PATH
-// const base_path = '/nicolas_donoso_website'
 
+const base_path = CONSTANTS.BASE_PATH
+
+interface Props {
+	ogUrl?: string,
+	ogTitle?: string,
+	ogDescription?: string,
+	ogImage?: string 
+
+}
+
+const {
+	ogUrl = Astro.site, 
+	ogTitle = "Nicolás Donoso Web", 
+	ogDescription = "Nico tiene una página donde publica parte de su mundo",
+	ogImage = "og_portada.png"
+	} = Astro.props
 
 ---
 
@@ -21,18 +34,22 @@ const base_path = CONSTANTS.BASE_PATH
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Nicolás Donoso</title>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={ogUrl} />
+		<meta property="og:title" content={ogTitle} />
+		<meta property="og:description" content={ogDescription} />
+		<meta property="og:image" content={new URL(`og/${ogImage}`, Astro.site)} />
+		<meta property="og:image:width" content="1200" />
+  		<meta property="og:image:height" content="630" />
 	</head>
 	<body>
 		<header>
 			<nav>
 				<ul class="nav-list">
-					<!-- <li><a class="nav-link logo-link" href=`${base_path}/`><Image src={dibujoLogo} loading="eager" class="logo-image" alt="Logo" /></a></li> -->
 					<li><a class="nav-link logo-link" href=`${base_path}/`><img src={dibujoLogo.src} alt="Logo" loading="eager" class="logo-image"></a></li>
-					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>catálogo</a></li> -->
 					<li><a class="nav-link subtitles" href=`${base_path}/bio`>bio</a></li>
 					<li><a class="nav-link subtitles" href=`${base_path}/blog`>blog</a></li>
 					<li><a class="nav-link subtitles" href=`https://sites.google.com/view/catalogo-nicolas-donoso/catalog` target="_blank" >catálogo<sub>↪</sub></a></li>
-					<!-- <li><a class="nav-link subtitles" href=`${base_path}/`>contacto</a></li> -->
 				</ul>
 			</nav>
 		</header>
@@ -63,31 +80,19 @@ const base_path = CONSTANTS.BASE_PATH
 		flex-shrink: 0; 
 	}
 	main {
-		/* flex-grow: 1; */
 		flex: 1;
   		display: grid;
-  		/* place-content: center; */
 	}	
 	header {
 		height: 4rem;
-		/* position: relative; */
 		display: flex;
 		justify-content: center;
 	}
 
-	/* .logo-link {
-		margin-left: 1rem;
-		padding: 1rem;
-		width: auto;
-		position: absolute;
-		left: 0;
-	} */
 	.logo-image {
-		/* height: 50px; */
 		position: relative;
 		height: 3rem;
 		width: auto;
-		/* margin: 0 2vw; */
 	}
 	nav {
 		position: relative;
@@ -141,10 +146,8 @@ const base_path = CONSTANTS.BASE_PATH
 	/* Adaptación a Teléfono */
 	@media (max-width: 480px) {
 		header {
-			/* align-items: center; */
 			height: 6rem;
 			justify-content: center;
-			/* align-items: end; */
 
 		}
 		.nav-list {
@@ -152,8 +155,6 @@ const base_path = CONSTANTS.BASE_PATH
 			grid-template-columns: 2fr 2fr; 
 			gap: 0;
 			align-self: center;
-			/* flex-direction: column; */
-			/* column-gap: 1rem; */
 		}		
 		.footer-wrapper {
 			height: 5rem;

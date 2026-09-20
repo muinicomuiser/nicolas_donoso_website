@@ -5,7 +5,10 @@ import fotoYo from "@/assets/images/yo.png"
 
 ---
 
- <Layout>
+<Layout
+    ogUrl={Astro.request.url},
+    ogImage="og_bio.png"
+>
         <div class="bio-wrapper">
             <Image src={fotoYo} loading="eager"  alt="Foto de Nicolás" class="bio-image" />
             <div class="bio-content">
